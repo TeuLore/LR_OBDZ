@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Browse entries</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Відтінок білого */
+            color: Tomato;
+            font-family: 'Comic Sans MS', cursive; /* Використовуємо шрифт Comic Sans */
+            margin: 20px 40px; /* Доданий відступ зліва та права */
+        }
+        
+        h1 {
+            color: Tomato;
+            font-family: 'Comic Sans MS', cursive; /* Використовуємо шрифт Comic Sans */
+            font-size: 36px; /* Збільшений розмір шрифту */
+            margin: 20px 0; /* Додані відступи по верху та низу */
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 18px; /* Збільшений розмір шрифту */
+        }
+        
+        li {
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid Tomato;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Browse entries</h1>
+    {% if entries|length > 0 %}
+        <ul>
+        {% for entry in entries %}
+            <li><b>{{ entry[2] }}</b> ({{ entry[1] }})
+            <p>
+            {{ entry[3] }}
+            <hr>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>This blog is empty.</p>
+    {% endif %}
+</body>
+</html>

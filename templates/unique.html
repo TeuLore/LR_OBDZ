@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Унікальна робота №2</title>
+    <style>
+        body {
+            background-color: #f5f5f5; /* Відтінок білого */
+            color: Tomato;
+            font-family: 'Arial', sans-serif; /* Змінений шрифт */
+            margin: 20px;
+        }
+        
+        h1 {
+            color: Tomato;
+            font-family: 'Arial', sans-serif; /* Змінений шрифт */
+            font-size: 28px; /* Змінений розмір шрифту */
+            margin: 20px 0; /* Додані відступи по верху та низу */
+        }
+    </style>
+</head>
+<body>
+    <h1>Найстаріші пости</h1>
+    {% for entry in entries %}
+        <p><b>Назва:</b> {{ entry.title }}</p>
+        <p><b>Дата:</b> {{ entry.date }}</p>
+        <p><b>Контент:</b> {{ entry.content }}</p>
+        <hr>
+    {% else %}
+        <p>Нема постів.</p>
+    {% endfor %}
+</body>
+</html>
